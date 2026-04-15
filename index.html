@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tanishq Kumar — Marketing & Brand Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,500;0,700;0,900;1,700&family=Barlow:wght@300;400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0b0b0b;
+  --ink2:#141414;
+  --ink3:#1c1c1c;
+  --ink4:#252525;
+  --wire:#2e2e2e;
+  --wire2:rgba(255,255,255,0.07);
+  --wire3:rgba(255,255,255,0.13);
+  --chalk:#f0ece4;
+  --chalk2:rgba(240,236,228,0.6);
+  --chalk3:rgba(240,236,228,0.3);
+  --ktm:#ff5500;
+  --bajaj:#1a56db;
+  --hero:#e8c832;
+  --mono:'Share Tech Mono',monospace;
+  --display:'Barlow Condensed',sans-serif;
+  --body:'Barlow',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--chalk);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden;cursor:crosshair}
+
+/* CARBON TEXTURE */
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
+  background-image:
+    repeating-linear-gradient(45deg,rgba(255,255,255,0.012) 0px,rgba(255,255,255,0.012) 1px,transparent 1px,transparent 4px),
+    repeating-linear-gradient(-45deg,rgba(255,255,255,0.012) 0px,rgba(255,255,255,0.012) 1px,transparent 1px,transparent 4px);
+}
+
+/* CUSTOM CURSOR */
+*, a{cursor:crosshair}
+
+/* ── LOADING SCREEN ── */
+#loader{
+  position:fixed;inset:0;z-index:9999;background:var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;
+  transition:opacity 0.5s ease 0.3s, visibility 0.5s ease 0.3s;
+}
+#loader.gone{opacity:0;visibility:hidden}
+.loader-line{width:200px;height:1px;background:var(--wire);position:relative;overflow:hidden}
+.loader-fill{position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--ktm);animation:loaderAnim 1.4s ease forwards}
+@keyframes loaderAnim{to{left:0}}
+.loader-text{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.3em;color:var(--chalk3);text-transform:uppercase}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 2.5rem;
+  border-bottom:1px solid var(--wire2);
+  backdrop-filter:blur(24px);
+  background:rgba(11,11,11,0.88);
+}
+.nav-logo{font-family:var(--display);font-size:1.4rem;font-weight:900;letter-spacing:0.12em;color:var(--chalk);text-decoration:none;text-transform:uppercase}
+.nav-logo em{color:var(--ktm);font-style:normal}
+.nav-center{display:flex;gap:0;border:1px solid var(--wire)}
+.nav-center a{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--chalk3);text-decoration:none;padding:7px 16px;
+  border-right:1px solid var(--wire);transition:all 0.15s;
+}
+.nav-center a:last-child{border-right:none}
+.nav-center a:hover{background:var(--wire2);color:var(--chalk)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.nav-badge{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;border:1px solid var(--ktm);color:var(--ktm)}
+.nav-dot{width:7px;height:7px;border-radius:50%;background:var(--ktm);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;display:grid;
+  grid-template-columns:1fr 480px;
+  padding-top:62px;position:relative;overflow:hidden;
+}
+.hero-bg-text{
+  position:absolute;bottom:-2rem;left:-1rem;
+  font-family:var(--display);font-size:28vw;font-weight:900;
+  color:rgba(255,255,255,0.018);line-height:1;pointer-events:none;
+  letter-spacing:-0.02em;white-space:nowrap;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:4rem 3rem 4rem 2.5rem;position:relative;z-index:2;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--ktm);margin-bottom:1.5rem;
+}
+.hero-tag-line{width:28px;height:1px;background:var(--ktm)}
+.hero-name{
+  font-family:var(--display);font-weight:900;
+  font-size:clamp(5.5rem,10vw,10.5rem);line-height:0.87;
+  letter-spacing:-0.01em;text-transform:uppercase;
+  margin-bottom:0.5rem;
+}
+.hero-name .outline{-webkit-text-stroke:1.5px var(--chalk);color:transparent}
+.hero-name .accent{color:var(--ktm)}
+.hero-role{
+  font-family:var(--display);font-weight:300;
+  font-size:clamp(1rem,2vw,1.5rem);
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--chalk2);margin-bottom:2.5rem;
+}
+.hero-desc{
+  font-size:0.95rem;font-weight:300;
+  color:var(--chalk2);max-width:440px;line-height:1.85;
+  border-left:2px solid var(--wire);padding-left:1.2rem;
+  margin-bottom:2.5rem;
+}
+.hero-brands{display:flex;gap:1px;margin-bottom:2.5rem}
+.brand-chip{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;
+  text-transform:uppercase;padding:7px 14px;border:1px solid var(--wire);
+  color:var(--chalk3);transition:all 0.2s;
+}
+.brand-chip.ktm{border-color:rgba(255,85,0,0.4);color:var(--ktm)}
+.brand-chip.bajaj{border-color:rgba(26,86,219,0.5);color:var(--bajaj)}
+.brand-chip.hero{border-color:rgba(232,200,50,0.4);color:var(--hero)}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--ink);background:var(--ktm);
+  padding:14px 28px;text-decoration:none;
+  border:none;transition:all 0.2s;width:fit-content;
+}
+.hero-cta:hover{background:var(--chalk);transform:translateY(-2px)}
+
+/* HERO RIGHT — RPM GAUGE */
+.hero-right{
+  background:var(--ink2);
+  border-left:1px solid var(--wire2);
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:0;
+  padding:2rem;
+}
+.rpm-gauge{position:relative;width:280px;height:280px;margin-bottom:2rem}
+.rpm-svg{width:100%;height:100%}
+.rpm-center-val{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-48%);
+  text-align:center;
+}
+.rpm-num{font-family:var(--display);font-size:3.5rem;font-weight:900;color:var(--chalk);line-height:1}
+.rpm-unit{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;color:var(--chalk3);text-transform:uppercase;margin-top:4px}
+.rpm-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.18em;color:var(--ktm);text-transform:uppercase;margin-top:6px}
+
+.hero-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--wire2);border:1px solid var(--wire2);width:100%}
+.hm-cell{background:var(--ink2);padding:1.2rem 1rem;text-align:center}
+.hm-num{font-family:var(--display);font-size:2.2rem;font-weight:700;color:var(--chalk);line-height:1}
+.hm-num .acc{color:var(--ktm)}
+.hm-label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--chalk3);margin-top:4px}
+
+/* ── SECTION BASE ── */
+.sec{padding:6rem 2.5rem}
+.sec-eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--chalk3);margin-bottom:1rem;
+}
+.sec-eyebrow span{color:var(--ktm)}
+.sec-title{
+  font-family:var(--display);font-weight:900;
+  font-size:clamp(3rem,6vw,6rem);line-height:0.9;
+  text-transform:uppercase;letter-spacing:0.01em;
+  margin-bottom:0.8rem;
+}
+.sec-sub{font-size:0.95rem;font-weight:300;color:var(--chalk2);max-width:560px;margin-bottom:3.5rem;line-height:1.8}
+
+/* ── RESUME BULLETS ── */
+.bullets-sec{background:var(--ink2);border-top:1px solid var(--wire2);border-bottom:1px solid var(--wire2)}
+.bullets-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--wire2)}
+.bullet-card{
+  background:var(--ink2);padding:2.2rem 2rem;
+  position:relative;overflow:hidden;
+  transition:background 0.2s;
+}
+.bullet-card:hover{background:var(--ink3)}
+.bullet-card::before{
+  content:attr(data-n);
+  position:absolute;top:1.5rem;right:1.8rem;
+  font-family:var(--display);font-size:5rem;font-weight:900;
+  color:rgba(255,255,255,0.04);line-height:1;pointer-events:none;
+}
+.bullet-card::after{
+  content:'';position:absolute;top:0;left:0;width:3px;height:0;
+  background:var(--ktm);transition:height 0.3s ease;
+}
+.bullet-card:hover::after{height:100%}
+.bc-company{
+  font-family:var(--mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--ktm);margin-bottom:0.8rem;
+}
+.bc-text{font-size:0.95rem;font-weight:400;line-height:1.8;color:var(--chalk);margin-bottom:1.2rem}
+.bc-text strong{color:var(--chalk);font-weight:500}
+.bc-kpi{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;
+  color:var(--ktm);border:1px solid rgba(255,85,0,0.3);
+  padding:6px 12px;
+}
+.bc-kpi::before{content:'▶';font-size:0.5rem}
+/* UNIVO = bajaj blue accent */
+.bullet-card.univo::after{background:var(--bajaj)}
+.bullet-card.univo .bc-company{color:var(--bajaj)}
+.bullet-card.univo .bc-kpi{color:var(--bajaj);border-color:rgba(26,86,219,0.35)}
+.bullet-card.univo .bc-kpi::before{color:var(--bajaj)}
+
+/* ── CASE STUDIES ── */
+.cases-sec{background:var(--ink)}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--wire2)}
+.case-card{
+  background:var(--ink);padding:2.5rem 2.2rem;
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--wire2);
+  transition:background 0.25s;
+}
+.case-card:hover{background:var(--ink2)}
+.case-number{
+  font-family:var(--display);font-size:7rem;font-weight:900;
+  color:rgba(255,255,255,0.03);position:absolute;
+  bottom:-1rem;right:1.5rem;line-height:1;pointer-events:none;
+}
+.case-tag{
+  display:inline-block;font-family:var(--mono);font-size:0.58rem;
+  letter-spacing:0.18em;text-transform:uppercase;
+  padding:4px 10px;border:1px solid var(--wire);color:var(--chalk3);
+  margin-bottom:1.2rem;
+}
+.case-title{
+  font-family:var(--display);font-size:2.2rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.04em;line-height:1;
+  color:var(--chalk);margin-bottom:1rem;
+}
+.case-body{font-size:0.88rem;font-weight:300;color:var(--chalk2);line-height:1.85;margin-bottom:1.5rem;max-width:420px}
+.case-metrics{display:flex;gap:1.5rem;flex-wrap:wrap}
+.cm-item{}
+.cm-val{font-family:var(--display);font-size:2rem;font-weight:700;color:var(--chalk);line-height:1}
+.cm-val .acc{color:var(--ktm)}
+.cm-val .acc2{color:var(--bajaj)}
+.cm-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk3);margin-top:2px}
+
+/* ── AUTOMOTIVE CAMPAIGNS ── */
+.auto-sec{
+  background:var(--ink2);
+  border-top:1px solid var(--wire2);
+  border-bottom:1px solid var(--wire2);
+}
+.brand-tabs{display:flex;gap:0;margin-bottom:3rem;border-bottom:1px solid var(--wire)}
+.btab{
+  font-family:var(--mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;
+  padding:12px 24px;color:var(--chalk3);background:transparent;
+  border:none;border-bottom:2px solid transparent;margin-bottom:-1px;
+  cursor:crosshair;transition:all 0.2s;
+}
+.btab:hover{color:var(--chalk)}
+.btab.active-ktm{color:var(--ktm);border-bottom-color:var(--ktm)}
+.btab.active-bajaj{color:var(--bajaj);border-bottom-color:var(--bajaj)}
+.btab.active-hero{color:var(--hero);border-bottom-color:var(--hero)}
+.campaign-panel{display:none}
+.campaign-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.cp-left{}
+.cp-brief{
+  background:var(--ink3);border:1px solid var(--wire);
+  padding:1.8rem;margin-bottom:1.5rem;
+}
+.cp-brief-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--chalk3);margin-bottom:0.6rem}
+.cp-brief-val{font-size:0.9rem;font-weight:400;color:var(--chalk);line-height:1.7}
+.cp-headline{
+  font-family:var(--display);font-size:3.5rem;font-weight:900;
+  text-transform:uppercase;letter-spacing:0.02em;line-height:0.9;
+  margin-bottom:1rem;
+}
+.cp-tagline{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.15em;color:var(--chalk3);text-transform:uppercase;margin-bottom:1.5rem}
+.cp-content-plan{}
+.cp-plan-title{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--chalk3);margin-bottom:1rem}
+.cp-week{
+  display:grid;grid-template-columns:70px 1fr;gap:10px;
+  padding:12px 0;border-top:1px solid var(--wire2);align-items:start;
+}
+.cp-week-label{font-family:var(--mono);font-size:0.58rem;color:var(--ktm);letter-spacing:0.1em;text-transform:uppercase;padding-top:2px}
+.cp-week-content{font-size:0.82rem;font-weight:300;color:var(--chalk2);line-height:1.6}
+.cp-right{}
+.cp-visual{
+  width:100%;aspect-ratio:4/5;
+  position:relative;overflow:hidden;
+  border:1px solid var(--wire);
+}
+.cp-channels{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--wire2);border:1px solid var(--wire2);margin-top:1.5rem}
+.cp-channel{background:var(--ink3);padding:1rem;text-align:center}
+.cp-ch-icon{font-size:1.2rem;margin-bottom:4px}
+.cp-ch-name{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk3)}
+.cp-ch-val{font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--chalk);line-height:1;margin-top:2px}
+
+/* KTM specific colors */
+.ktm-accent{color:var(--ktm)}
+.bajaj-accent{color:var(--bajaj)}
+.hero-accent{color:var(--hero)}
+.cp-week-label.b{color:var(--bajaj)}
+.cp-week-label.h{color:var(--hero)}
+
+/* ── BRAND TEARDOWN ── */
+.teardown-sec{background:var(--ink);border-top:1px solid var(--wire2)}
+.teardown-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--wire2)}
+.td-card{background:var(--ink);padding:2rem 1.8rem;position:relative}
+.td-brand{
+  font-family:var(--display);font-size:3rem;font-weight:900;
+  text-transform:uppercase;letter-spacing:0.04em;line-height:1;
+  margin-bottom:0.3rem;
+}
+.td-positioning{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--chalk3);margin-bottom:1.5rem}
+.td-row{margin-bottom:1rem}
+.td-row-label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:5px}
+.td-row-label.green{color:#4caf50}
+.td-row-label.red{color:#f44336}
+.td-row-label.amber{color:#ff9800}
+.td-row-val{font-size:0.82rem;font-weight:300;color:var(--chalk2);line-height:1.6}
+.td-opp{
+  margin-top:1.5rem;padding:1rem;background:var(--ink2);
+  border-left:2px solid;
+}
+.td-opp-label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:5px}
+.td-opp-val{font-size:0.82rem;font-weight:400;color:var(--chalk);line-height:1.6}
+
+/* ── SKILLS SECTION ── */
+.skills-sec{
+  background:var(--ink2);border-top:1px solid var(--wire2);
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+}
+.skills-left{padding:6rem 2.5rem;border-right:1px solid var(--wire2)}
+.skills-right{padding:6rem 2.5rem}
+.skill-item{margin-bottom:1.8rem}
+.skill-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.skill-name{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--chalk)}
+.skill-pct{font-family:var(--display);font-size:1.1rem;font-weight:700;color:var(--ktm)}
+.skill-track{height:2px;background:var(--wire);position:relative}
+.skill-fill{height:100%;background:var(--ktm);transform-origin:left;transform:scaleX(0);transition:transform 1.2s cubic-bezier(0.25,0.46,0.45,0.94)}
+.skill-fill.bajaj-fill{background:var(--bajaj)}
+.skill-fill.hero-fill{background:var(--hero)}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:1px;background:var(--wire2);border:1px solid var(--wire2);margin-top:2rem}
+.tool-chip{background:var(--ink2);padding:10px 12px;font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk3);text-align:center;transition:all 0.2s}
+.tool-chip:hover{background:var(--ink3);color:var(--chalk)}
+
+/* ── PORTFOLIO CONTENT GUIDE ── */
+.guide-sec{background:var(--ink3);border-top:1px solid var(--wire2)}
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--wire2)}
+.guide-card{
+  background:var(--ink3);padding:1.8rem;
+  position:relative;transition:background 0.2s;
+}
+.guide-card:hover{background:var(--ink4)}
+.guide-priority{
+  font-family:var(--mono);font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;
+  padding:3px 8px;margin-bottom:1rem;display:inline-block;
+}
+.priority-must{background:rgba(255,85,0,0.15);color:var(--ktm);border:1px solid rgba(255,85,0,0.3)}
+.priority-strong{background:rgba(26,86,219,0.12);color:var(--bajaj);border:1px solid rgba(26,86,219,0.3)}
+.priority-nice{background:rgba(232,200,50,0.1);color:var(--hero);border:1px solid rgba(232,200,50,0.3)}
+.guide-title{font-family:var(--display);font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--chalk);margin-bottom:0.6rem;line-height:1.1}
+.guide-desc{font-size:0.82rem;font-weight:300;color:var(--chalk2);line-height:1.7;margin-bottom:1rem}
+.guide-tags{display:flex;flex-wrap:wrap;gap:4px}
+.gtag{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;padding:3px 7px;background:var(--ink);border:1px solid var(--wire);color:var(--chalk3)}
+
+/* ── CONTACT ── */
+.contact-sec{
+  background:var(--ink);border-top:1px solid var(--wire2);
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:50vh;
+}
+.contact-left{
+  padding:6rem 2.5rem;display:flex;flex-direction:column;justify-content:center;
+  position:relative;overflow:hidden;
+  border-right:1px solid var(--wire2);
+}
+.contact-left::before{
+  content:'HIRE';font-family:var(--display);font-size:20vw;font-weight:900;
+  color:rgba(255,255,255,0.025);position:absolute;bottom:-1rem;left:-1rem;
+  line-height:1;pointer-events:none;
+}
+.contact-right{padding:6rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
+.contact-link{
+  display:flex;align-items:center;gap:16px;
+  padding:1.2rem 0;border-bottom:1px solid var(--wire2);
+  text-decoration:none;color:var(--chalk);
+  transition:padding-left 0.2s;
+}
+.contact-link:hover{padding-left:10px}
+.cl-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--chalk3);min-width:80px}
+.cl-val{font-size:0.95rem;font-weight:400;color:var(--chalk)}
+.cl-arrow{margin-left:auto;color:var(--ktm);font-size:1.1rem;transition:transform 0.2s}
+.contact-link:hover .cl-arrow{transform:translateX(4px)}
+.contact-cta{
+  margin-top:2rem;display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--ink);background:var(--ktm);padding:14px 28px;text-decoration:none;
+  border:none;transition:all 0.2s;width:fit-content;
+}
+.contact-cta:hover{background:var(--chalk)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink2);border-top:1px solid var(--wire2);
+  padding:1.5rem 2.5rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.footer-l{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk3)}
+.footer-r{display:flex;gap:1.5rem}
+.footer-r a{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;color:var(--chalk3);text-decoration:none;transition:color 0.2s}
+.footer-r a:hover{color:var(--ktm)}
+
+/* ── SCROLL REVEAL ── */
+.rev{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.rev.in{opacity:1;transform:none}
+.rev-delay-1{transition-delay:0.1s}
+.rev-delay-2{transition-delay:0.2s}
+.rev-delay-3{transition-delay:0.3s}
+
+/* ── TICKER ── */
+.ticker{
+  background:var(--ktm);overflow:hidden;white-space:nowrap;
+  padding:8px 0;border-top:1px solid rgba(255,255,255,0.2);border-bottom:1px solid rgba(255,255,255,0.2);
+}
+.ticker-inner{display:inline-block;animation:ticker 22s linear infinite}
+.ticker-inner span{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--ink);padding:0 2rem;
+}
+.ticker-inner span::before{content:'◆';margin-right:1.5rem;font-size:0.5rem}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-text">Loading portfolio</div>
+  <div class="loader-line"><div class="loader-fill"></div></div>
+  <div class="loader-text" id="loader-pct">0%</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">T<em>.</em>KUMAR</a>
+  <div class="nav-center">
+    <a href="#bullets">Resume</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#campaigns">Campaigns</a>
+    <a href="#teardown">Brands</a>
+    <a href="#guide">Content Guide</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-dot"></div>
+    <div class="nav-badge">Available for hire</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">MKTG</div>
+
+  <div class="hero-left">
+    <div class="hero-tag"><div class="hero-tag-line"></div>MBA Marketing · DTU Delhi · 2026</div>
+    <h1 class="hero-name">
+      <span class="outline">TANI</span><br>
+      <span>SHQ</span><br>
+      <span class="accent">KUMAR</span>
+    </h1>
+    <div class="hero-role">Brand · Content · Growth · Automotive</div>
+    <p class="hero-desc">
+      I build brands that make people feel something. SEO depth, CRM analytics fluency, revenue-proven campaign experience — and a genuine obsession with the machines that move the world. Targeting marketing and brand roles at India's leading motorcycle companies.
+    </p>
+    <div class="hero-brands">
+      <div class="brand-chip ktm">KTM</div>
+      <div class="brand-chip bajaj">Bajaj</div>
+      <div class="brand-chip hero">Hero</div>
+      <div class="brand-chip">RE</div>
+      <div class="brand-chip">TVS</div>
+    </div>
+    <a href="#cases" class="hero-cta">View Case Studies →</a>
+  </div>
+
+  <div class="hero-right">
+    <!-- RPM GAUGE -->
+    <div class="rpm-gauge">
+      <svg class="rpm-svg" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1a56db"/>
+            <stop offset="60%" stop-color="#ff5500"/>
+            <stop offset="100%" stop-color="#ff5500"/>
+          </linearGradient>
+        </defs>
+        <!-- outer ring -->
+        <circle cx="140" cy="140" r="128" fill="none" stroke="#1e1e1e" stroke-width="1"/>
+        <circle cx="140" cy="140" r="110" fill="none" stroke="#252525" stroke-width="8"/>
+        <!-- tick marks -->
+        <g id="ticks"></g>
+        <!-- arc bg -->
+        <path id="arc-bg" fill="none" stroke="#2a2a2a" stroke-width="6" stroke-linecap="round"
+          d="M 36 195 A 110 110 0 1 1 244 195"/>
+        <!-- arc fill - animated -->
+        <path id="arc-fill" fill="none" stroke="url(#arcGrad)" stroke-width="6" stroke-linecap="round"
+          stroke-dasharray="0 1000"
+          d="M 36 195 A 110 110 0 1 1 244 195"/>
+        <!-- needle -->
+        <g id="needle" transform="rotate(-225 140 140)">
+          <line x1="140" y1="140" x2="140" y2="50" stroke="#ff5500" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="140" cy="140" r="6" fill="#ff5500"/>
+          <circle cx="140" cy="140" r="3" fill="#0b0b0b"/>
+        </g>
+        <!-- labels -->
+        <text x="140" y="230" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="9" fill="rgba(240,236,228,0.25)" letter-spacing="3">BRAND IMPACT</text>
+      </svg>
+      <div class="rpm-center-val">
+        <div class="rpm-num" id="rpm-display">0</div>
+        <div class="rpm-unit">×1000 reach</div>
+        <div class="rpm-label">Campaign Output</div>
+      </div>
+    </div>
+
+    <div class="hero-metrics">
+      <div class="hm-cell">
+        <div class="hm-num"><span class="counter acc" data-target="42">0</span><span class="acc">%</span></div>
+        <div class="hm-label">Revenue Lift — IndiaPost</div>
+      </div>
+      <div class="hm-cell">
+        <div class="hm-num"><span class="counter" data-target="50">0</span><span class="acc">+</span></div>
+        <div class="hm-label">B2B Activations/Month</div>
+      </div>
+      <div class="hm-cell">
+        <div class="hm-num"><span class="counter" data-target="67">0</span><span class="acc">%</span></div>
+        <div class="hm-label">Conversion Rate Lift</div>
+      </div>
+      <div class="hm-cell">
+        <div class="hm-num"><span class="counter" data-target="100">0</span><span class="acc">+</span></div>
+        <div class="hm-label">Content Pieces Published</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Bajaj Auto</span><span>KTM India</span><span>Hero MotoCorp</span><span>Royal Enfield</span><span>TVS Motors</span><span>Content Strategy</span><span>SEO & SEM</span><span>Brand Marketing</span><span>Growth Analytics</span><span>WhatsApp Campaigns</span><span>HubSpot CRM</span><span>Power BI</span><span>MBA Marketing · DTU</span>
+    <span>Bajaj Auto</span><span>KTM India</span><span>Hero MotoCorp</span><span>Royal Enfield</span><span>TVS Motors</span><span>Content Strategy</span><span>SEO & SEM</span><span>Brand Marketing</span><span>Growth Analytics</span><span>WhatsApp Campaigns</span><span>HubSpot CRM</span><span>Power BI</span><span>MBA Marketing · DTU</span>
+  </div>
+</div>
+
+<!-- RESUME BULLETS -->
+<section class="bullets-sec sec" id="bullets">
+  <div class="sec-eyebrow"><span>//</span> 01 — Resume Impact Statements</div>
+  <h2 class="sec-title rev">10 High-Impact<br>Bullets</h2>
+  <p class="sec-sub rev">Every line built from real work, real numbers, real outcomes. No filler, no vague verbs.</p>
+
+  <div class="bullets-grid">
+
+    <div class="bullet-card rev" data-n="01">
+      <div class="bc-company">Xindus Trade Networks · Revenue Ownership</div>
+      <p class="bc-text">Took full ownership of the IndiaPost × Xindus revenue partnership when weekly revenue <strong>plateaued at ₹6L</strong> — redesigned client activation cadence, resolved adoption bottlenecks, and scaled weekly revenue to <strong>₹8.5L within one month, a 42% growth lift.</strong></p>
+      <div class="bc-kpi">₹6L → ₹8.5L per week · 42% lift</div>
+    </div>
+
+    <div class="bullet-card rev rev-delay-1" data-n="02">
+      <div class="bc-company">Xindus Trade Networks · B2B Acquisition</div>
+      <p class="bc-text">Reactivated churned B2B accounts through structured discovery calls using HubSpot CRM — consistently hitting a KPI of <strong>50 activations per month</strong> and surfacing recurring service pain points that directly informed product improvements.</p>
+      <div class="bc-kpi">50 activations/month · HubSpot CRM</div>
+    </div>
+
+    <div class="bullet-card rev" data-n="03">
+      <div class="bc-company">Xindus Trade Networks · Campaign Creative</div>
+      <p class="bc-text">Independently <strong>designed campaign creatives and executed WhatsApp marketing campaigns</strong> for the IndiaPost logistics partnership — from brief to final asset — driving client adoption and contributing directly to the ₹8.5L/week revenue trajectory.</p>
+      <div class="bc-kpi">Creative design · WhatsApp campaigns · ₹3.5L revenue attributed</div>
+    </div>
+
+    <div class="bullet-card rev rev-delay-1" data-n="04">
+      <div class="bc-company">Xindus Trade Networks · Automation & Tooling</div>
+      <p class="bc-text">Built an <strong>automated ticketing system on Periscope</strong> for the Customer Success team, reducing manual query routing time. Additionally developed and deployed client-facing tools — a rates calculator and compliance dashboard — on Netlify, <strong>independently, without a technical background.</strong></p>
+      <div class="bc-kpi">Periscope automation · Netlify deployment</div>
+    </div>
+
+    <div class="bullet-card rev" data-n="05">
+      <div class="bc-company">Xindus Trade Networks · Multi-Platform Strategy</div>
+      <p class="bc-text">Analysed user behaviour across B2C and B2B segments and developed a <strong>multi-platform content marketing strategy</strong> (LinkedIn, YouTube, Instagram, Reddit, Quora), improving brand visibility and driving measurable customer engagement and retention improvements.</p>
+      <div class="bc-kpi">5 platforms · B2B + B2C content strategy</div>
+    </div>
+
+    <div class="bullet-card univo rev rev-delay-1" data-n="06">
+      <div class="bc-company">UNIVO EdTech · Funnel Analytics</div>
+      <p class="bc-text">Sole-built a real-time <strong>Power BI dashboard</strong> tracking lead-to-conversion performance across <strong>500+ sales counsellors</strong>, surfacing drop-off points that supported a conversion rate improvement from <strong>12% to 20% — a 67% relative uplift.</strong></p>
+      <div class="bc-kpi">12% → 20% conversion · 67% relative uplift</div>
+    </div>
+
+    <div class="bullet-card univo rev" data-n="07">
+      <div class="bc-company">UNIVO EdTech · Operational Efficiency</div>
+      <p class="bc-text">Conducted a time & motion study across the counsellor workflow, identifying idle time as the primary performance constraint — recommendations implemented <strong>reduced idle time from 20% to below 10%</strong>, effectively doubling productive selling hours per counsellor.</p>
+      <div class="bc-kpi">Idle time: 20% → under 10%</div>
+    </div>
+
+    <div class="bullet-card univo rev rev-delay-1" data-n="08">
+      <div class="bc-company">UNIVO EdTech · AI Process Design</div>
+      <p class="bc-text">Proposed and scoped an <strong>AI-driven onboarding automation workflow</strong> to reduce counsellor onboarding TAT and improve lead engagement velocity — identifying 4 pipeline stages where automation would cut lag time and increase conversion likelihood.</p>
+      <div class="bc-kpi">AI workflow design · onboarding TAT reduction</div>
+    </div>
+
+    <div class="bullet-card rev" data-n="09">
+      <div class="bc-company">AIIOS · SEO Content Strategy</div>
+      <p class="bc-text">Engineered a full-funnel SEO content strategy using SEMrush, Ahrefs & Google Search Console — producing <strong>100+ optimised articles</strong> that drove ~20% organic traffic growth in 6 months and secured <strong>Page 1 Google rankings</strong> across 15+ competitive keywords.</p>
+      <div class="bc-kpi">100+ articles · Page 1 rankings · 20% traffic growth</div>
+    </div>
+
+    <div class="bullet-card rev rev-delay-1" data-n="10">
+      <div class="bc-company">AIIOS · National Press & Editorial</div>
+      <p class="bc-text">Produced press releases and editorial content <strong>published on ABP, Times Now, and MSN</strong> — translating niche technical topics into mass-market digital narratives, demonstrating ability to write for both brand and search across editorial formats.</p>
+      <div class="bc-kpi">ABP · Times Now · MSN · Published editorial</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases-sec sec" id="cases">
+  <div class="sec-eyebrow"><span>//</span> 02 — Real Work, Real Outcomes</div>
+  <h2 class="sec-title rev">Case<br>Studies</h2>
+  <p class="sec-sub rev">Three campaigns I owned, built, and measured. No borrowed credit — these are mine.</p>
+
+  <div class="case-grid">
+
+    <div class="case-card rev">
+      <div class="case-number">01</div>
+      <div class="case-tag">Revenue Growth · Partnership</div>
+      <div class="case-title">IndiaPost × Xindus Revenue Campaign</div>
+      <p class="case-body">Inherited a stalled logistics partnership generating ₹6L/week. Problem: low client activation on the IndiaPost channel despite strong supply. My approach — diagnosed client hesitation via outreach calls, redesigned the activation sequence, built WhatsApp campaign creatives in-house, and ran targeted campaigns. Result: weekly revenue grew from ₹6L to ₹8.5L in 30 days.</p>
+      <div class="case-metrics">
+        <div class="cm-item"><div class="cm-val"><span class="acc">₹8.5L</span></div><div class="cm-label">Weekly Revenue Peak</div></div>
+        <div class="cm-item"><div class="cm-val"><span class="acc">42%</span></div><div class="cm-label">Growth in 30 Days</div></div>
+        <div class="cm-item"><div class="cm-val"><span class="acc">₹3.5L</span></div><div class="cm-label">Attributed Campaign Rev.</div></div>
+      </div>
+    </div>
+
+    <div class="case-card rev rev-delay-1">
+      <div class="case-number">02</div>
+      <div class="case-tag">CRM Analytics · Conversion Optimisation</div>
+      <div class="case-title">UNIVO Funnel Rebuild & Conversion Lift</div>
+      <p class="case-body">500+ counsellors. 12% conversion rate. No visibility into why leads were dropping. I built a Power BI dashboard from scratch — solo — that mapped the full lead-to-conversion journey, exposed idle time as the key drag, and gave management a real-time performance layer they didn't have before. Conversion moved from 12% to 20% after interventions based on my analysis.</p>
+      <div class="case-metrics">
+        <div class="cm-item"><div class="cm-val"><span class="acc2">67%</span></div><div class="cm-label">Conversion Lift (Relative)</div></div>
+        <div class="cm-item"><div class="cm-val"><span class="acc2">500+</span></div><div class="cm-label">Counsellors Tracked</div></div>
+        <div class="cm-item"><div class="cm-val"><span class="acc2">50%</span></div><div class="cm-label">Idle Time Reduction</div></div>
+      </div>
+    </div>
+
+    <div class="case-card rev">
+      <div class="case-number">03</div>
+      <div class="case-tag">SEO · Content Strategy</div>
+      <div class="case-title">AIIOS — Page 1 SEO Content Engine</div>
+      <p class="case-body">Built the entire content and SEO strategy from scratch. Keyword research via SEMrush + Ahrefs, a full editorial calendar, 100+ pieces produced, and a performance tracking loop via Google Search Console. Traffic grew ~20% in 6 months. Multiple pages hit Page 1 rankings for competitive search terms, with one article ranking top 3 nationally in its category.</p>
+      <div class="case-metrics">
+        <div class="cm-item"><div class="cm-val">100<span class="acc">+</span></div><div class="cm-label">Articles Published</div></div>
+        <div class="cm-item"><div class="cm-val">20<span class="acc">%</span></div><div class="cm-label">Organic Traffic Growth</div></div>
+        <div class="cm-item"><div class="cm-val">15<span class="acc">+</span></div><div class="cm-label">Page 1 Keywords</div></div>
+      </div>
+    </div>
+
+    <div class="case-card rev rev-delay-1">
+      <div class="case-number">04</div>
+      <div class="case-tag">Tooling · No-Code Development</div>
+      <div class="case-title">Building Client Tools Without a Dev Background</div>
+      <p class="case-body">Identified that clients needed a rates calculator and a compliance report dashboard — tools that didn't exist. Used AI-assisted development to build both from scratch and deployed them publicly on Netlify. Created an automated ticketing system on Periscope for CS operations. This ability to identify gaps and build solutions independently — no dev team, no budget — is rare in marketing candidates.</p>
+      <div class="case-metrics">
+        <div class="cm-item"><div class="cm-val">3<span class="acc">+</span></div><div class="cm-label">Tools Built & Deployed</div></div>
+        <div class="cm-item"><div class="cm-val">0<span class="acc">₹</span></div><div class="cm-label">External Dev Cost</div></div>
+        <div class="cm-item"><div class="cm-val"><span class="acc">Live</span></div><div class="cm-label">Netlify Deployment</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- AUTOMOTIVE CAMPAIGN CONCEPTS -->
+<section class="auto-sec sec" id="campaigns">
+  <div class="sec-eyebrow"><span>//</span> 03 — Campaign Concepts for Target Brands</div>
+  <h2 class="sec-title rev">Brand<br>Campaigns</h2>
+  <p class="sec-sub rev">Spec campaign concepts developed for three brands I want to work with. Built to show how I think as a marketer, not just as a content creator.</p>
+
+  <div class="brand-tabs">
+    <button class="btab active-ktm" onclick="switchBrand('ktm',this)">KTM India</button>
+    <button class="btab" onclick="switchBrand('bajaj',this)">Bajaj Auto</button>
+    <button class="btab" onclick="switchBrand('hero',this)">Hero MotoCorp</button>
+  </div>
+
+  <!-- KTM PANEL -->
+  <div class="campaign-panel active" id="panel-ktm">
+    <div class="cp-left">
+      <div class="cp-headline ktm-accent">BORN<br>TO RACE</div>
+      <div class="cp-tagline">KTM 390 Duke · Youth Digital Campaign · 2025</div>
+      <div class="cp-brief">
+        <div class="cp-brief-label">Target Audience</div>
+        <div class="cp-brief-val">18–26 year-old male riders in Tier 1 & 2 cities. Engineering students, first-job earners. Influenced by motorsport, streetwear, and international bike culture. Currently riding 150–200cc but aspirationally stretching to 390cc.</div>
+      </div>
+      <div class="cp-brief">
+        <div class="cp-brief-label">Core Message</div>
+        <div class="cp-brief-val">The 390 Duke isn't a step up. It's a transformation. You don't upgrade to it — you become it.</div>
+      </div>
+      <div class="cp-brief">
+        <div class="cp-brief-label">Campaign Insight</div>
+        <div class="cp-brief-val">KTM's current India content plays it safe with spec sheets and track footage. The real purchase trigger for this segment isn't performance data — it's identity. They want to feel like a racer before they buy. Content should make them see themselves in the bike.</div>
+      </div>
+      <div class="cp-content-plan">
+        <div class="cp-plan-title">4-Week Content Calendar</div>
+        <div class="cp-week"><div class="cp-week-label">Week 1</div><div class="cp-week-content">Teaser Reels — 5 × 15-sec anonymous rider clips with no branding. "Something is coming." Identity intrigue.</div></div>
+        <div class="cp-week"><div class="cp-week-label">Week 2</div><div class="cp-week-content">Identity posts — 5 × Instagram carousels asking "What kind of rider are you?" leading to a Duke reveal. Engagement-first.</div></div>
+        <div class="cp-week"><div class="cp-week-label">Week 3</div><div class="cp-week-content">YouTube hero video — 90-sec "first ride" film. Raw, urban, no VO. Music-driven. User reaction UGC push.</div></div>
+        <div class="cp-week"><div class="cp-week-label">Week 4</div><div class="cp-week-content">Community takeover — partner with 3 micro-influencer riders (50–150K). Campus test ride events. LinkedIn SEO content targeting engineering college audience.</div></div>
+      </div>
+    </div>
+    <div class="cp-right">
+      <div class="cp-visual">
+        <svg viewBox="0 0 400 500" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ktm-glow" cx="65%" cy="62%" r="45%">
+              <stop offset="0%" stop-color="#ff5500" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#0d0d0d" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="ktm-road" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1a1a1a"/>
+              <stop offset="100%" stop-color="#0d0d0d"/>
+            </linearGradient>
+          </defs>
+          <!-- bg -->
+          <rect width="400" height="500" fill="#0d0d0d"/>
+          <!-- diagonal slash bg texture -->
+          <line x1="-10" y1="0" x2="410" y2="500" stroke="#151515" stroke-width="40"/>
+          <line x1="40" y1="0" x2="460" y2="500" stroke="#131313" stroke-width="25"/>
+          <line x1="-60" y1="0" x2="360" y2="500" stroke="#141414" stroke-width="18"/>
+          <!-- orange glow -->
+          <rect width="400" height="500" fill="url(#ktm-glow)"/>
+          <!-- top bar -->
+          <rect width="400" height="4" fill="#ff5500"/>
+          <!-- CAMPAIGN TAG -->
+          <text x="20" y="30" font-family="'Share Tech Mono',monospace" font-size="8" fill="#ff5500" letter-spacing="4">// INSTAGRAM CAMPAIGN CONCEPT</text>
+          <!-- BIG HEADLINE -->
+          <text x="18" y="105" font-family="'Barlow Condensed',sans-serif" font-size="105" font-weight="900" fill="#f0ece4" letter-spacing="-1">BORN</text>
+          <text x="18" y="195" font-family="'Barlow Condensed',sans-serif" font-size="105" font-weight="900" fill="#ff5500" letter-spacing="-1">TO</text>
+          <text x="18" y="285" font-family="'Barlow Condensed',sans-serif" font-size="105" font-weight="900" fill="#f0ece4" letter-spacing="-1">RACE</text>
+          <!-- divider line -->
+          <line x1="18" y1="300" x2="382" y2="300" stroke="#ff5500" stroke-width="1.5"/>
+          <!-- subline -->
+          <text x="18" y="320" font-family="'Share Tech Mono',monospace" font-size="9" fill="rgba(240,236,228,0.5)" letter-spacing="3">KTM 390 DUKE · INDIA 2025</text>
+          <!-- DETAILED MOTORCYCLE ILLUSTRATION -->
+          <!-- road surface -->
+          <rect x="0" y="400" width="400" height="100" fill="url(#ktm-road)"/>
+          <line x1="0" y1="402" x2="400" y2="402" stroke="#222" stroke-width="1"/>
+          <!-- road dashes -->
+          <rect x="60" y="445" width="40" height="3" fill="#2a2a2a" rx="1"/>
+          <rect x="160" y="445" width="40" height="3" fill="#2a2a2a" rx="1"/>
+          <rect x="260" y="445" width="40" height="3" fill="#2a2a2a" rx="1"/>
+          <!-- REAR WHEEL -->
+          <circle cx="120" cy="400" r="58" fill="none" stroke="#252525" stroke-width="1.5"/>
+          <circle cx="120" cy="400" r="44" fill="none" stroke="#1e1e1e" stroke-width="9"/>
+          <circle cx="120" cy="400" r="36" fill="none" stroke="#222" stroke-width="1" stroke-dasharray="4,3"/>
+          <circle cx="120" cy="400" r="12" fill="none" stroke="#ff5500" stroke-width="2.5"/>
+          <circle cx="120" cy="400" r="5" fill="#ff5500"/>
+          <line x1="120" y1="342" x2="120" y2="388" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="120" y1="412" x2="120" y2="458" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="62" y1="400" x2="108" y2="400" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="132" y1="400" x2="178" y2="400" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="79" y1="358" x2="112" y2="388" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="128" y1="412" x2="161" y2="442" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="161" y1="358" x2="128" y2="388" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="112" y1="412" x2="79" y2="442" stroke="#2e2e2e" stroke-width="1.5"/>
+          <!-- FRONT WHEEL -->
+          <circle cx="300" cy="400" r="54" fill="none" stroke="#252525" stroke-width="1.5"/>
+          <circle cx="300" cy="400" r="41" fill="none" stroke="#1e1e1e" stroke-width="8"/>
+          <circle cx="300" cy="400" r="33" fill="none" stroke="#222" stroke-width="1" stroke-dasharray="4,3"/>
+          <circle cx="300" cy="400" r="11" fill="none" stroke="#ff5500" stroke-width="2.5"/>
+          <circle cx="300" cy="400" r="4" fill="#ff5500"/>
+          <line x1="300" y1="346" x2="300" y2="389" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="300" y1="411" x2="300" y2="454" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="246" y1="400" x2="289" y2="400" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="311" y1="400" x2="354" y2="400" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="262" y1="362" x2="292" y2="389" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="308" y1="411" x2="338" y2="438" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="338" y1="362" x2="308" y2="389" stroke="#2e2e2e" stroke-width="1.5"/>
+          <line x1="292" y1="411" x2="262" y2="438" stroke="#2e2e2e" stroke-width="1.5"/>
+          <!-- FRAME -->
+          <polyline points="120,400 158,330 215,395 120,400" fill="rgba(255,85,0,0.07)" stroke="#3a3a3a" stroke-width="2.5"/>
+          <!-- top tube -->
+          <line x1="158" y1="330" x2="262" y2="345" stroke="#444" stroke-width="3.5"/>
+          <!-- seat tube -->
+          <line x1="215" y1="395" x2="218" y2="310" stroke="#404040" stroke-width="3.5"/>
+          <!-- seat stays -->
+          <line x1="120" y1="400" x2="218" y2="355" stroke="#363636" stroke-width="2"/>
+          <!-- fork -->
+          <line x1="262" y1="345" x2="300" y2="400" stroke="#484848" stroke-width="4"/>
+          <line x1="270" y1="350" x2="308" y2="400" stroke="#333" stroke-width="2"/>
+          <!-- head tube -->
+          <rect x="256" y="335" width="13" height="24" rx="3" fill="#505050"/>
+          <!-- tank -->
+          <path d="M165 345 Q195 315 240 328 Q255 350 235 365 Q200 372 165 345Z" fill="rgba(255,85,0,0.18)" stroke="#ff5500" stroke-width="1.5" opacity="0.9"/>
+          <!-- engine block -->
+          <rect x="160" y="360" width="55" height="35" rx="3" fill="#222" stroke="#333" stroke-width="1"/>
+          <rect x="165" y="365" width="18" height="12" rx="2" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.5"/>
+          <rect x="187" y="365" width="18" height="12" rx="2" fill="#1a1a1a" stroke="#2e2e2e" stroke-width="0.5"/>
+          <!-- exhaust -->
+          <path d="M185 390 Q155 398 135 400" fill="none" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+          <path d="M185 390 Q155 402 133 403" fill="none" stroke="#2a2a2a" stroke-width="2" stroke-linecap="round"/>
+          <!-- handlebar -->
+          <line x1="262" y1="338" x2="285" y2="328" stroke="#555" stroke-width="4.5" stroke-linecap="round"/>
+          <line x1="262" y1="338" x2="242" y2="332" stroke="#555" stroke-width="4.5" stroke-linecap="round"/>
+          <rect x="282" y="324" width="8" height="8" rx="2" fill="#ff5500"/>
+          <rect x="240" y="328" width="7" height="7" rx="1" fill="#444"/>
+          <!-- seat -->
+          <path d="M205 308 Q218 303 230 308 Q225 316 218 318 Q210 316 205 308Z" fill="#333" stroke="#444" stroke-width="0.5"/>
+          <!-- headlight (front) -->
+          <ellipse cx="308" cy="355" rx="10" ry="7" fill="#1a1a1a" stroke="#ff5500" stroke-width="1.5"/>
+          <ellipse cx="308" cy="355" rx="5" ry="3.5" fill="#ff550022"/>
+          <!-- orange glow under bike -->
+          <ellipse cx="210" cy="408" rx="120" ry="10" fill="#ff5500" opacity="0.06"/>
+          <!-- speed lines -->
+          <line x1="10" y1="355" x2="80" y2="355" stroke="#ff5500" stroke-width="1.5" opacity="0.5"/>
+          <line x1="0" y1="368" x2="65" y2="368" stroke="#ff5500" stroke-width="1" opacity="0.3"/>
+          <line x1="15" y1="381" x2="72" y2="381" stroke="#ff5500" stroke-width="0.5" opacity="0.2"/>
+          <!-- KTM badge -->
+          <rect x="18" y="462" width="56" height="24" fill="#ff5500"/>
+          <text x="46" y="479" font-family="'Barlow Condensed',sans-serif" font-size="14" font-weight="900" fill="#0d0d0d" text-anchor="middle" letter-spacing="2">KTM</text>
+          <!-- 390 DUKE label -->
+          <text x="82" y="479" font-family="'Share Tech Mono',monospace" font-size="9" fill="rgba(240,236,228,0.4)" letter-spacing="2">390 DUKE</text>
+          <!-- bottom right tag -->
+          <text x="382" y="479" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(255,85,0,0.5)" text-anchor="end">SPEC CONCEPT · T.KUMAR</text>
+        </svg>
+      </div>
+      <div class="cp-channels">
+        <div class="cp-channel"><div class="cp-ch-name">Instagram Reels</div><div class="cp-ch-val ktm-accent">Hero</div></div>
+        <div class="cp-channel"><div class="cp-ch-name">YouTube</div><div class="cp-ch-val ktm-accent">90s Film</div></div>
+        <div class="cp-channel"><div class="cp-ch-name">Influencers</div><div class="cp-ch-val ktm-accent">3 Micro</div></div>
+        <div class="cp-channel"><div class="cp-ch-name">LinkedIn SEO</div><div class="cp-ch-val ktm-accent">B2B Lead</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BAJAJ PANEL -->
+  <div class="campaign-panel" id="panel-bajaj">
+    <div class="cp-left">
+      <div class="cp-headline bajaj-accent">THE<br>ORIGINAL<br>BOLD</div>
+      <div class="cp-tagline">Bajaj Pulsar NS400 · Brand Repositioning · 2025</div>
+      <div class="cp-brief">
+        <div class="cp-brief-label">Strategic Problem</div>
+        <div class="cp-brief-val">Bajaj Pulsar is the most familiar name in Indian motorcycles — but familiarity has become a liability. It's seen as "dad's bike" by Gen Z even as the NS400 is a genuinely premium machine. The brand needs a repositioning story, not just better ads.</div>
+      </div>
+      <div class="cp-brief">
+        <div class="cp-brief-label">Campaign Insight</div>
+        <div class="cp-brief-val">Every Indian city kid grew up seeing Pulsars. That's not a weakness — it's the foundation of the boldest possible narrative: "You grew up watching it. Now it's time to catch up." Reclaim ownership. Nostalgia + aspiration fused.</div>
+      </div>
+      <div class="cp-brief">
+        <div class="cp-brief-label">Core Message</div>
+        <div class="cp-brief-val">The Pulsar didn't stand still. Did you?</div>
+      </div>
+      <div class="cp-content-plan">
+        <div class="cp-plan-title">Content Strategy</div>
+        <div class="cp-week"><div class="cp-week-label b">Phase 1</div><div class="cp-week-content">Nostalgia hook — "First Pulsar Memory" UGC campaign. Ask Instagram followers to share their first Pulsar sighting. Free reach, massive emotional engagement.</div></div>
+        <div class="cp-week"><div class="cp-week-label b">Phase 2</div><div class="cp-week-content">The "catch up" reveal — side-by-side evolution video series. 2004 Pulsar vs NS400. Data specs told as a character evolution story.</div></div>
+        <div class="cp-week"><div class="cp-week-label b">Phase 3</div><div class="cp-week-content">Performance content — track day events in 5 cities, filmed for YouTube and Reels. Authentic, not staged. NS400 rider profiles — engineers, designers, creators.</div></div>
+        <div class="cp-week"><div class="cp-week-label b">Phase 4</div><div class="cp-week-content">SEO content push — "NS400 vs [competitor]" comparison articles, buyer guides, and YouTube review partnerships with mid-tier moto channels.</div></div>
+      </div>
+    </div>
+    <div class="cp-right">
+      <div class="cp-visual">
+        <svg viewBox="0 0 400 500" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="baj-bg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#060b18"/>
+              <stop offset="100%" stop-color="#0a0f1e"/>
+            </linearGradient>
+            <radialGradient id="baj-glow" cx="55%" cy="55%" r="48%">
+              <stop offset="0%" stop-color="#1a56db" stop-opacity="0.28"/>
+              <stop offset="100%" stop-color="#0a0f1e" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#baj-bg)"/>
+          <!-- grid overlay -->
+          <pattern id="bgrid2" width="22" height="22" patternUnits="userSpaceOnUse">
+            <path d="M22 0L0 0 0 22" fill="none" stroke="#0d1525" stroke-width="0.5"/>
+          </pattern>
+          <rect width="400" height="500" fill="url(#bgrid2)"/>
+          <rect width="400" height="500" fill="url(#baj-glow)"/>
+          <!-- top bar: Bajaj blue -->
+          <rect width="400" height="4" fill="#1a56db"/>
+          <!-- campaign tag -->
+          <text x="20" y="28" font-family="'Share Tech Mono',monospace" font-size="8" fill="#1a56db" letter-spacing="4">// BRAND REPOSITIONING CONCEPT</text>
+          <!-- BIG HEADLINE -->
+          <text x="18" y="100" font-family="'Barlow Condensed',sans-serif" font-size="88" font-weight="900" fill="#f0ece4" letter-spacing="-1">THE</text>
+          <text x="18" y="188" font-family="'Barlow Condensed',sans-serif" font-size="88" font-weight="900" fill="#1a56db" letter-spacing="-1">ORIGINAL</text>
+          <text x="18" y="276" font-family="'Barlow Condensed',sans-serif" font-size="88" font-weight="900" fill="#f0ece4" letter-spacing="-1">BOLD</text>
+          <line x1="18" y1="292" x2="382" y2="292" stroke="#1a56db" stroke-width="1.5"/>
+          <text x="18" y="312" font-family="'Share Tech Mono',monospace" font-size="9" fill="rgba(240,236,228,0.45)" letter-spacing="3">PULSAR NS400 · INDIA · 2025</text>
+          <!-- MOTORCYCLE ILLUSTRATION -->
+          <!-- road -->
+          <rect x="0" y="408" width="400" height="92" fill="#080d18"/>
+          <line x1="0" y1="410" x2="400" y2="410" stroke="#111825" stroke-width="1.5"/>
+          <rect x="50" y="448" width="36" height="3" fill="#121c30" rx="1"/>
+          <rect x="150" y="448" width="36" height="3" fill="#121c30" rx="1"/>
+          <rect x="250" y="448" width="36" height="3" fill="#121c30" rx="1"/>
+          <rect x="345" y="448" width="36" height="3" fill="#121c30" rx="1"/>
+          <!-- REAR WHEEL -->
+          <circle cx="118" cy="408" r="56" fill="none" stroke="#1a2040" stroke-width="1.5"/>
+          <circle cx="118" cy="408" r="43" fill="none" stroke="#111825" stroke-width="9"/>
+          <circle cx="118" cy="408" r="34" fill="none" stroke="#161e35" stroke-width="1" stroke-dasharray="5,3"/>
+          <circle cx="118" cy="408" r="11" fill="none" stroke="#1a56db" stroke-width="2.5"/>
+          <circle cx="118" cy="408" r="4.5" fill="#1a56db"/>
+          <line x1="118" y1="352" x2="118" y2="397" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="118" y1="419" x2="118" y2="464" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="62" y1="408" x2="107" y2="408" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="129" y1="408" x2="174" y2="408" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="78" y1="368" x2="110" y2="396" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="126" y1="420" x2="158" y2="448" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="158" y1="368" x2="126" y2="396" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="110" y1="420" x2="78" y2="448" stroke="#1e2845" stroke-width="1.5"/>
+          <!-- FRONT WHEEL -->
+          <circle cx="298" cy="408" r="52" fill="none" stroke="#1a2040" stroke-width="1.5"/>
+          <circle cx="298" cy="408" r="40" fill="none" stroke="#111825" stroke-width="8"/>
+          <circle cx="298" cy="408" r="32" fill="none" stroke="#161e35" stroke-width="1" stroke-dasharray="5,3"/>
+          <circle cx="298" cy="408" r="10" fill="none" stroke="#1a56db" stroke-width="2.5"/>
+          <circle cx="298" cy="408" r="4" fill="#1a56db"/>
+          <line x1="298" y1="356" x2="298" y2="398" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="298" y1="418" x2="298" y2="460" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="246" y1="408" x2="288" y2="408" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="308" y1="408" x2="350" y2="408" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="261" y1="371" x2="291" y2="397" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="305" y1="419" x2="335" y2="445" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="335" y1="371" x2="305" y2="397" stroke="#1e2845" stroke-width="1.5"/>
+          <line x1="291" y1="419" x2="261" y2="445" stroke="#1e2845" stroke-width="1.5"/>
+          <!-- FRAME -->
+          <polyline points="118,408 158,336 215,402 118,408" fill="rgba(26,86,219,0.07)" stroke="#2a3560" stroke-width="2.5"/>
+          <line x1="158" y1="336" x2="258" y2="350" stroke="#2e3d65" stroke-width="3.5"/>
+          <line x1="215" y1="402" x2="215" y2="318" stroke="#2a3560" stroke-width="3.5"/>
+          <line x1="118" y1="408" x2="215" y2="362" stroke="#222d50" stroke-width="2"/>
+          <line x1="258" y1="350" x2="298" y2="408" stroke="#353f6a" stroke-width="4"/>
+          <line x1="265" y1="354" x2="305" y2="408" stroke="#1e2845" stroke-width="2"/>
+          <rect x="253" y="341" width="12" height="22" rx="3" fill="#354070"/>
+          <!-- tank -->
+          <path d="M163 352 Q192 322 240 335 Q255 358 232 370 Q200 378 163 352Z" fill="rgba(26,86,219,0.2)" stroke="#1a56db" stroke-width="1.5" opacity="0.9"/>
+          <!-- engine -->
+          <rect x="158" y="368" width="57" height="34" rx="3" fill="#131c35" stroke="#1e2845" stroke-width="1"/>
+          <rect x="163" y="373" width="20" height="11" rx="2" fill="#0d1525" stroke="#1a2040" stroke-width="0.5"/>
+          <rect x="187" y="373" width="20" height="11" rx="2" fill="#0d1525" stroke="#1a2040" stroke-width="0.5"/>
+          <!-- exhaust -->
+          <path d="M183 396 Q152 405 130 408" fill="none" stroke="#1a2040" stroke-width="4" stroke-linecap="round"/>
+          <!-- handlebar -->
+          <line x1="258" y1="344" x2="280" y2="334" stroke="#3a4470" stroke-width="4.5" stroke-linecap="round"/>
+          <line x1="258" y1="344" x2="238" y2="338" stroke="#3a4470" stroke-width="4.5" stroke-linecap="round"/>
+          <rect x="277" y="330" width="7" height="7" rx="2" fill="#1a56db"/>
+          <!-- seat -->
+          <path d="M203 316 Q216 311 228 316 Q224 324 216 326 Q208 324 203 316Z" fill="#1e2845" stroke="#2a3560" stroke-width="0.5"/>
+          <!-- headlight -->
+          <ellipse cx="305" cy="363" rx="9" ry="6" fill="#0d1525" stroke="#1a56db" stroke-width="1.5"/>
+          <ellipse cx="305" cy="363" rx="4.5" ry="3" fill="#1a56db22"/>
+          <!-- glow under bike -->
+          <ellipse cx="208" cy="416" rx="115" ry="9" fill="#1a56db" opacity="0.06"/>
+          <!-- evolution label — left side design element -->
+          <text x="18" y="465" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(26,86,219,0.6)" letter-spacing="2">2001 ————————————— 2025</text>
+          <text x="18" y="480" font-family="'Barlow Condensed',sans-serif" font-size="11" font-weight="700" fill="rgba(240,236,228,0.35)" letter-spacing="2">EVOLVED. NOT REPLACED.</text>
+          <!-- Bajaj badge -->
+          <rect x="310" y="462" width="70" height="24" fill="#1a56db"/>
+          <text x="345" y="479" font-family="'Barlow Condensed',sans-serif" font-size="13" font-weight="900" fill="#f0ece4" text-anchor="middle" letter-spacing="1">BAJAJ</text>
+          <text x="382" y="499" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(26,86,219,0.5)" text-anchor="end">SPEC CONCEPT · T.KUMAR</text>
+        </svg>
+      </div>
+      <div class="cp-channels">
+        <div class="cp-channel"><div class="cp-ch-name">UGC Campaign</div><div class="cp-ch-val bajaj-accent">Instagram</div></div>
+        <div class="cp-channel"><div class="cp-ch-name">YouTube Series</div><div class="cp-ch-val bajaj-accent">Evolution</div></div>
+        <div class="cp-channel"><div class="cp-ch-name">Track Events</div><div class="cp-ch-val bajaj-accent">5 Cities</div></div>
+        <div class="cp-channel"><div class="cp-ch-name">SEO Articles</div><div class="cp-ch-val bajaj-accent">Comparison</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO PANEL -->
+  <div class="campaign-panel" id="panel-hero">
+    <div class="cp-left">
+      <div class="cp-headline hero-accent">INDIA'S<br>FIRST<br>MILE</div>
+      <div class="cp-tagline">Hero Splendor+ · Mass Market Content Strategy · 2025</div>
+      <div class="cp-brief">
+        <div class="cp-brief-label">Strategic Context</div>
+        <div class="cp-brief-val">Hero MotoCorp sells more bikes than almost anyone on earth, but its digital content feels corporate and disconnected from its actual buyers — the daily commuter, the village businessman, the delivery rider. The brand has a powerful human story it's not telling.</div>
+      </div>
+      <div class="cp-brief">
+        <div class="cp-brief-label">Campaign Insight</div>
+        <div class="cp-brief-val">Every Splendor is someone's first independence. A first job commute. A first business delivery. A first time driving yourself somewhere. Hero's content should stop selling a motorcycle and start documenting a movement.</div>
+      </div>
+      <div class="cp-brief">
+        <div class="cp-brief-label">Core Message</div>
+        <div class="cp-brief-val">The Splendor doesn't just move you. It moves India.</div>
+      </div>
+      <div class="cp-content-plan">
+        <div class="cp-plan-title">Content Architecture</div>
+        <div class="cp-week"><div class="cp-week-label h">Pillar 1</div><div class="cp-week-content">Documentary series — "First Mile" — 6 × 3-min YouTube docs. One Splendor owner per episode. Farmer, nurse, student, delivery rider. Real stories, real India.</div></div>
+        <div class="cp-week"><div class="cp-week-label h">Pillar 2</div><div class="cp-week-content">SEO content in Hindi + English — "Splendor mileage tips", "best 100cc bike for daily use", Tier 2 city buyer guides. This is where Hero's buyers actually search.</div></div>
+        <div class="cp-week"><div class="cp-week-label h">Pillar 3</div><div class="cp-week-content">WhatsApp & regional social — Vernacular content strategy for markets Hero dominates: UP, Bihar, Rajasthan. Short videos, regional language captions, local influencer network.</div></div>
+        <div class="cp-week"><div class="cp-week-label h">Pillar 4</div><div class="cp-week-content">Dealer co-marketing content — Arm Hero's 6,000+ dealer network with content toolkits — local Instagram templates, WhatsApp broadcast scripts — for grassroots digital push.</div></div>
+      </div>
+    </div>
+    <div class="cp-right">
+      <div class="cp-visual">
+        <svg viewBox="0 0 400 500" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hero-sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0c0b00"/>
+              <stop offset="60%" stop-color="#0f0e00"/>
+              <stop offset="100%" stop-color="#1a1600"/>
+            </linearGradient>
+            <radialGradient id="hero-sun" cx="50%" cy="38%" r="22%">
+              <stop offset="0%" stop-color="#e8c832" stop-opacity="0.5"/>
+              <stop offset="60%" stop-color="#e8c832" stop-opacity="0.08"/>
+              <stop offset="100%" stop-color="#0f0e00" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="hero-glow" cx="50%" cy="75%" r="40%">
+              <stop offset="0%" stop-color="#e8c832" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#0f0e00" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#hero-sky)"/>
+          <!-- sunrise glow -->
+          <rect width="400" height="500" fill="url(#hero-sun)"/>
+          <!-- ground glow -->
+          <rect width="400" height="500" fill="url(#hero-glow)"/>
+          <!-- horizon line -->
+          <rect x="0" y="330" width="400" height="170" fill="#0d0c00"/>
+          <line x1="0" y1="330" x2="400" y2="330" stroke="#2a2400" stroke-width="1.5"/>
+          <!-- road perspective -->
+          <polygon points="165,330 235,330 270,500 130,500" fill="#111000"/>
+          <line x1="165" y1="330" x2="130" y2="500" stroke="#1a1800" stroke-width="1"/>
+          <line x1="235" y1="330" x2="270" y2="500" stroke="#1a1800" stroke-width="1"/>
+          <!-- road centre dashes (perspective) -->
+          <line x1="200" y1="345" x2="200" y2="370" stroke="#252200" stroke-width="3" stroke-linecap="round"/>
+          <line x1="200" y1="385" x2="200" y2="415" stroke="#252200" stroke-width="4" stroke-linecap="round"/>
+          <line x1="200" y1="432" x2="200" y2="470" stroke="#252200" stroke-width="5" stroke-linecap="round"/>
+          <!-- distant fields / flat landscape -->
+          <rect x="0" y="315" width="130" height="18" fill="#111000"/>
+          <rect x="270" y="315" width="130" height="18" fill="#111000"/>
+          <!-- sun disc -->
+          <circle cx="200" cy="290" r="28" fill="#e8c832" opacity="0.18"/>
+          <circle cx="200" cy="290" r="18" fill="#e8c832" opacity="0.25"/>
+          <circle cx="200" cy="290" r="10" fill="#e8c832" opacity="0.5"/>
+          <!-- sun rays -->
+          <line x1="200" y1="258" x2="200" y2="248" stroke="#e8c832" stroke-width="1" opacity="0.25"/>
+          <line x1="222" y1="268" x2="230" y2="260" stroke="#e8c832" stroke-width="1" opacity="0.2"/>
+          <line x1="230" y1="290" x2="242" y2="290" stroke="#e8c832" stroke-width="1" opacity="0.2"/>
+          <line x1="178" y1="268" x2="170" y2="260" stroke="#e8c832" stroke-width="1" opacity="0.2"/>
+          <line x1="170" y1="290" x2="158" y2="290" stroke="#e8c832" stroke-width="1" opacity="0.2"/>
+          <!-- top bar -->
+          <rect width="400" height="4" fill="#e8c832"/>
+          <!-- campaign tag -->
+          <text x="20" y="28" font-family="'Share Tech Mono',monospace" font-size="8" fill="#e8c832" letter-spacing="4">// YOUTUBE DOCUMENTARY CONCEPT</text>
+          <!-- headline top -->
+          <text x="18" y="82" font-family="'Barlow Condensed',sans-serif" font-size="72" font-weight="900" fill="#f0ece4" letter-spacing="-0.5">INDIA'S</text>
+          <text x="18" y="152" font-family="'Barlow Condensed',sans-serif" font-size="72" font-weight="900" fill="#e8c832" letter-spacing="-0.5">FIRST</text>
+          <text x="18" y="222" font-family="'Barlow Condensed',sans-serif" font-size="72" font-weight="900" fill="#f0ece4" letter-spacing="-0.5">MILE</text>
+          <line x1="18" y1="238" x2="382" y2="238" stroke="#e8c832" stroke-width="1.5"/>
+          <text x="18" y="258" font-family="'Share Tech Mono',monospace" font-size="8.5" fill="rgba(240,236,228,0.4)" letter-spacing="3">SPLENDOR+ · 6000+ DEALERS · INDIA</text>
+          <!-- MOTORCYCLE on road — Splendor-style commuter -->
+          <!-- shadow on road -->
+          <ellipse cx="200" cy="420" rx="88" ry="7" fill="#e8c832" opacity="0.04"/>
+          <!-- REAR WHEEL -->
+          <circle cx="148" cy="415" r="46" fill="none" stroke="#252100" stroke-width="1.5"/>
+          <circle cx="148" cy="415" r="35" fill="none" stroke="#1a1800" stroke-width="7"/>
+          <circle cx="148" cy="415" r="10" fill="none" stroke="#e8c832" stroke-width="2"/>
+          <circle cx="148" cy="415" r="4" fill="#e8c832"/>
+          <line x1="148" y1="369" x2="148" y2="405" stroke="#222000" stroke-width="1.5"/>
+          <line x1="148" y1="425" x2="148" y2="461" stroke="#222000" stroke-width="1.5"/>
+          <line x1="102" y1="415" x2="138" y2="415" stroke="#222000" stroke-width="1.5"/>
+          <line x1="158" y1="415" x2="194" y2="415" stroke="#222000" stroke-width="1.5"/>
+          <line x1="116" y1="382" x2="143" y2="405" stroke="#222000" stroke-width="1.5"/>
+          <line x1="153" y1="425" x2="180" y2="448" stroke="#222000" stroke-width="1.5"/>
+          <line x1="180" y1="382" x2="153" y2="405" stroke="#222000" stroke-width="1.5"/>
+          <line x1="143" y1="425" x2="116" y2="448" stroke="#222000" stroke-width="1.5"/>
+          <!-- FRONT WHEEL -->
+          <circle cx="270" cy="415" r="44" fill="none" stroke="#252100" stroke-width="1.5"/>
+          <circle cx="270" cy="415" r="34" fill="none" stroke="#1a1800" stroke-width="7"/>
+          <circle cx="270" cy="415" r="9" fill="none" stroke="#e8c832" stroke-width="2"/>
+          <circle cx="270" cy="415" r="3.5" fill="#e8c832"/>
+          <line x1="270" y1="371" x2="270" y2="406" stroke="#222000" stroke-width="1.5"/>
+          <line x1="270" y1="424" x2="270" y2="459" stroke="#222000" stroke-width="1.5"/>
+          <line x1="226" y1="415" x2="261" y2="415" stroke="#222000" stroke-width="1.5"/>
+          <line x1="279" y1="415" x2="314" y2="415" stroke="#222000" stroke-width="1.5"/>
+          <!-- FRAME - upright commuter geometry -->
+          <polyline points="148,415 178,352 220,410 148,415" fill="rgba(232,200,50,0.06)" stroke="#2e2a00" stroke-width="2.5"/>
+          <!-- seat tube -->
+          <line x1="220" y1="410" x2="222" y2="340" stroke="#2e2a00" stroke-width="3"/>
+          <!-- top tube — more upright -->
+          <line x1="178" y1="352" x2="248" y2="360" stroke="#353000" stroke-width="3"/>
+          <!-- seat stays -->
+          <line x1="148" y1="415" x2="222" y2="375" stroke="#282400" stroke-width="2"/>
+          <!-- fork — upright -->
+          <line x1="248" y1="360" x2="270" y2="415" stroke="#353000" stroke-width="3.5"/>
+          <line x1="254" y1="363" x2="276" y2="415" stroke="#222000" stroke-width="1.5"/>
+          <!-- head tube -->
+          <rect x="243" y="352" width="11" height="20" rx="3" fill="#2e2a00"/>
+          <!-- fuel tank — rounded, Splendor style -->
+          <path d="M178 358 Q200 340 228 348 Q240 365 225 374 Q200 380 178 358Z" fill="rgba(232,200,50,0.15)" stroke="#e8c832" stroke-width="1.2" opacity="0.85"/>
+          <!-- engine -->
+          <rect x="172" y="374" width="48" height="30" rx="3" fill="#141200" stroke="#222000" stroke-width="1"/>
+          <!-- carrier/rack at rear -->
+          <rect x="145" y="338" width="35" height="8" rx="2" fill="#1e1c00" stroke="#2a2800" stroke-width="1"/>
+          <!-- exhaust — low position, commuter style -->
+          <path d="M192 398 Q162 406 150 415" fill="none" stroke="#1e1c00" stroke-width="3.5" stroke-linecap="round"/>
+          <!-- handlebar — upright -->
+          <line x1="248" y1="355" x2="262" y2="342" stroke="#2e2a00" stroke-width="4" stroke-linecap="round"/>
+          <line x1="248" y1="355" x2="234" y2="348" stroke="#2e2a00" stroke-width="4" stroke-linecap="round"/>
+          <rect x="259" y="339" width="6" height="6" rx="1" fill="#e8c832"/>
+          <!-- seat -->
+          <path d="M210 338 Q222 333 234 338 Q230 345 222 347 Q214 345 210 338Z" fill="#1e1c00" stroke="#2a2800" stroke-width="0.5"/>
+          <!-- rider silhouette (simple, upright) -->
+          <circle cx="218" cy="325" r="11" fill="#0d0c00" stroke="#252100" stroke-width="1"/>
+          <path d="M218 336 Q215 355 212 370 Q220 372 228 370 Q225 355 222 336Z" fill="#0d0c00" stroke="#252100" stroke-width="1"/>
+          <!-- headlamp (round, classic) -->
+          <circle cx="274" cy="368" r="9" fill="#141200" stroke="#e8c832" stroke-width="1.5"/>
+          <circle cx="274" cy="368" r="4" fill="#e8c83222"/>
+          <!-- Hero badge -->
+          <rect x="18" y="464" width="58" height="24" fill="#e8c832"/>
+          <text x="47" y="480" font-family="'Barlow Condensed',sans-serif" font-size="13" font-weight="900" fill="#0b0b0b" text-anchor="middle" letter-spacing="1">HERO</text>
+          <!-- episode label -->
+          <text x="82" y="479" font-family="'Share Tech Mono',monospace" font-size="8" fill="rgba(232,200,50,0.5)" letter-spacing="2">EP. 01 · THE FARMER</text>
+          <text x="382" y="495" font-family="'Share Tech Mono',monospace" font-size="7" fill="rgba(232,200,50,0.4)" text-anchor="end">SPEC CONCEPT · T.KUMAR</text>
+        </svg>
+      </div>
+      <div class="cp-channels">
+        <div class="cp-channel"><div class="cp-ch-name">YouTube Docs</div><div class="cp-ch-val hero-accent">6 Episodes</div></div>
+        <div class="cp-channel"><div class="cp-ch-name">SEO (Hi+En)</div><div class="cp-ch-val hero-accent">Bilingual</div></div>
+        <div class="cp-channel"><div class="cp-ch-name">WhatsApp</div><div class="cp-ch-val hero-accent">Regional</div></div>
+        <div class="cp-channel"><div class="cp-ch-name">Dealer Kits</div><div class="cp-ch-val hero-accent">6000+</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND TEARDOWN -->
+<section class="teardown-sec sec" id="teardown">
+  <div class="sec-eyebrow"><span>//</span> 04 — Strategic Brand Analysis</div>
+  <h2 class="sec-title rev">Brand<br>Teardown</h2>
+  <p class="sec-sub rev">How I see the three brands I want to work with — strengths, gaps, and where I'd focus first.</p>
+
+  <div class="teardown-grid">
+
+    <div class="td-card rev">
+      <div class="td-brand ktm-accent">KTM</div>
+      <div class="td-positioning">Positioning: Aggressive Performance · Youth-First</div>
+      <div class="td-row">
+        <div class="td-row-label green">What Works</div>
+        <div class="td-row-val">International brand equity travels well. "Ready to Race" is one of the cleanest positioning lines in global motorcycling. Strong aspirational pull in Tier 1 cities. Duke 390 is genuinely world-class hardware.</div>
+      </div>
+      <div class="td-row">
+        <div class="td-row-label red">What's Broken</div>
+        <div class="td-row-val">India content is spec-heavy and emotionally flat. Social feeds are dominated by track footage that most Indian buyers will never access. The gap between the brand story and the buyer's reality is too large. Vernacular content: nearly zero.</div>
+      </div>
+      <div class="td-row">
+        <div class="td-row-label amber">Opportunity</div>
+        <div class="td-row-val">Identity-led content. Build around the transformation of becoming a KTM rider, not the bike's specs. Tier 2 city community building. College campus events with content creation.</div>
+      </div>
+      <div class="td-opp" style="border-color:var(--ktm)">
+        <div class="td-opp-label" style="color:var(--ktm)">My First Move</div>
+        <div class="td-opp-val">A "First KTM" UGC series on Instagram. Real riders. Real cities. No racetrack required. Builds community and generates content at near-zero cost.</div>
+      </div>
+    </div>
+
+    <div class="td-card rev rev-delay-1">
+      <div class="td-brand bajaj-accent">BAJAJ</div>
+      <div class="td-positioning">Positioning: Performance Value · Mass Premium</div>
+      <div class="td-row">
+        <div class="td-row-label green">What Works</div>
+        <div class="td-row-val">Unmatched distribution and trust. Pulsar is the most recognised performance brand name in India. The NS400 is a genuinely strong product that punches well above its price point. CNG bike innovation is forward-thinking.</div>
+      </div>
+      <div class="td-row">
+        <div class="td-row-label red">What's Broken</div>
+        <div class="td-row-val">Brand perception hasn't kept up with product evolution. The Pulsar name carries "affordable" baggage when the NS400 deserves premium positioning. Digital content is inconsistent — strong in some markets, weak in youth segments.</div>
+      </div>
+      <div class="td-row">
+        <div class="td-row-label amber">Opportunity</div>
+        <div class="td-row-val">Nostalgia-to-aspiration repositioning. The Pulsar's history is a brand asset no competitor has. A "from your childhood to your driveway" narrative could convert Gen Z buyers who grew up with the brand.</div>
+      </div>
+      <div class="td-opp" style="border-color:var(--bajaj)">
+        <div class="td-opp-label" style="color:var(--bajaj)">My First Move</div>
+        <div class="td-opp-val">Launch an NS400 comparison content series — honest, SEO-optimised, YouTube + blog — targeting every competitive keyword the buyer searches before purchase. Own the consideration stage.</div>
+      </div>
+    </div>
+
+    <div class="td-card rev rev-delay-2">
+      <div class="td-brand hero-accent">HERO</div>
+      <div class="td-positioning">Positioning: Trusted Mass Market · India's Commuter</div>
+      <div class="td-row">
+        <div class="td-row-label green">What Works</div>
+        <div class="td-row-val">Scale and distribution that no Indian brand can match. 6,000+ dealers. Deep trust in rural and semi-urban India. The brand genuinely is India's workhorse — that's a powerful narrative foundation when told right.</div>
+      </div>
+      <div class="td-row">
+        <div class="td-row-label red">What's Broken</div>
+        <div class="td-row-val">Digital content is corporate and disconnected from actual buyers. No strong SEO presence for the keywords their buyers actually use. Vernacular digital marketing is underdeveloped relative to the size of the market Hero serves.</div>
+      </div>
+      <div class="td-row">
+        <div class="td-row-label amber">Opportunity</div>
+        <div class="td-row-val">Human storytelling at scale. Hero's 6,000 dealers are 6,000 content distribution nodes. A dealer co-marketing programme with simple content toolkits could generate enormous grassroots digital reach at very low cost.</div>
+      </div>
+      <div class="td-opp" style="border-color:var(--hero)">
+        <div class="td-opp-label" style="color:var(--hero)">My First Move</div>
+        <div class="td-opp-val">A Hindi + English SEO content hub targeting Tier 2/3 city buyer queries — "best mileage bike under ₹80,000", "Splendor vs Shine", "best bike for long distance commute". Rank for what Hero's buyers are actually searching.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div class="skills-sec" id="skills">
+  <div class="skills-left">
+    <div class="sec-eyebrow"><span>//</span> 05 — Capability Stack</div>
+    <h2 class="sec-title rev" style="font-size:clamp(2.5rem,5vw,4.5rem)">Skills &<br>Tools</h2>
+    <p class="sec-sub rev" style="margin-bottom:2rem">Built across four roles. Measured in outcomes, not credentials.</p>
+
+    <div class="skill-item rev">
+      <div class="skill-header"><span class="skill-name">SEO & Content Strategy</span><span class="skill-pct">92%</span></div>
+      <div class="skill-track"><div class="skill-fill" style="width:92%"></div></div>
+    </div>
+    <div class="skill-item rev rev-delay-1">
+      <div class="skill-header"><span class="skill-name">Campaign Management & Growth</span><span class="skill-pct">88%</span></div>
+      <div class="skill-track"><div class="skill-fill bajaj-fill" style="width:88%"></div></div>
+    </div>
+    <div class="skill-item rev rev-delay-2">
+      <div class="skill-header"><span class="skill-name">Brand Storytelling & Copywriting</span><span class="skill-pct">85%</span></div>
+      <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill-item rev">
+      <div class="skill-header"><span class="skill-name">CRM & Analytics (HubSpot, Power BI)</span><span class="skill-pct">82%</span></div>
+      <div class="skill-track"><div class="skill-fill bajaj-fill" style="width:82%"></div></div>
+    </div>
+    <div class="skill-item rev rev-delay-1">
+      <div class="skill-header"><span class="skill-name">Creative Direction & Visual Design</span><span class="skill-pct">78%</span></div>
+      <div class="skill-track"><div class="skill-fill hero-fill" style="width:78%"></div></div>
+    </div>
+    <div class="skill-item rev rev-delay-2">
+      <div class="skill-header"><span class="skill-name">Automotive Industry Knowledge</span><span class="skill-pct">90%</span></div>
+      <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+    </div>
+  </div>
+
+  <div class="skills-right">
+    <div class="sec-eyebrow" style="margin-top:0"><span>//</span> Tool Stack</div>
+    <div class="tool-grid">
+      <div class="tool-chip">SEMrush</div>
+      <div class="tool-chip">Ahrefs</div>
+      <div class="tool-chip">HubSpot</div>
+      <div class="tool-chip">Power BI</div>
+      <div class="tool-chip">Canva</div>
+      <div class="tool-chip">Google Search Console</div>
+      <div class="tool-chip">Meta Ads</div>
+      <div class="tool-chip">Google Ads</div>
+      <div class="tool-chip">Periscope</div>
+      <div class="tool-chip">Netlify</div>
+      <div class="tool-chip">Ubersuggest</div>
+      <div class="tool-chip">Google Analytics</div>
+      <div class="tool-chip">WhatsApp Business</div>
+      <div class="tool-chip">Excel</div>
+      <div class="tool-chip">Notion</div>
+      <div class="tool-chip">Claude AI</div>
+    </div>
+
+    <div style="margin-top:2.5rem">
+      <div class="sec-eyebrow"><span>//</span> Education</div>
+      <div style="margin-top:1rem">
+        <div style="padding:1.2rem 0;border-bottom:1px solid var(--wire2)">
+          <div style="font-family:var(--display);font-size:1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--chalk)">MBA — Marketing & Business Analytics</div>
+          <div style="font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk3);margin-top:4px">Delhi Technological University · 7.7 CGPA · Aug 2024 – Mar 2026</div>
+        </div>
+        <div style="padding:1.2rem 0;border-bottom:1px solid var(--wire2)">
+          <div style="font-family:var(--display);font-size:1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--chalk)">Google Ads Certification</div>
+          <div style="font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk3);margin-top:4px">Coursera · Digital Marketing — Simplilearn</div>
+        </div>
+        <div style="padding:1.2rem 0">
+          <div style="font-family:var(--display);font-size:1.1rem;font-weight:500;text-transform:uppercase;letter-spacing:0.04em;color:var(--ktm)">Recommended Next: Meta Blueprint · GA4 · HubSpot Content Cert</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTFOLIO CONTENT GUIDE -->
+<section class="guide-sec sec" id="guide">
+  <div class="sec-eyebrow"><span>//</span> 06 — What to Add Next</div>
+  <h2 class="sec-title rev">Content<br>To Build</h2>
+  <p class="sec-sub rev">A prioritised list of every portfolio piece you should create to get hired at Bajaj, KTM, or Hero. Ordered by hiring manager impact.</p>
+
+  <div class="guide-grid">
+
+    <div class="guide-card rev">
+      <div class="guide-priority priority-must">Must Have · Build This Week</div>
+      <div class="guide-title">3–5 Canva Ad Creatives — Bike Brands</div>
+      <div class="guide-desc">Design actual Instagram posts, a print-style ad, and a YouTube thumbnail for one of your target brands. KTM's orange on black. Bajaj's strong typography. Even concept work shows visual sensibility — and automotive brand teams hire for eye first, skills second.</div>
+      <div class="guide-tags"><span class="gtag">Canva</span><span class="gtag">Instagram Post</span><span class="gtag">Print Ad</span><span class="gtag">YT Thumbnail</span></div>
+    </div>
+
+    <div class="guide-card rev rev-delay-1">
+      <div class="guide-priority priority-must">Must Have · Build This Week</div>
+      <div class="guide-title">GSC Screenshot — Your SEO Traffic Growth</div>
+      <div class="guide-desc">Go into Google Search Console for AIIOS right now and screenshot the traffic curve showing 20% growth. Blur the domain if needed. One visual of a real upward graph is worth more than five bullet points. This is your most credible proof point.</div>
+      <div class="guide-tags"><span class="gtag">Google Search Console</span><span class="gtag">Screenshot</span><span class="gtag">Traffic Graph</span></div>
+    </div>
+
+    <div class="guide-card rev rev-delay-2">
+      <div class="guide-priority priority-must">Must Have · Build This Week</div>
+      <div class="guide-title">Xindus Revenue Case Study — 1 Page</div>
+      <div class="guide-desc">Write a structured 250-word case study: Problem (₹6L plateau) → Approach (outreach redesign + WhatsApp campaigns) → Result (₹8.5L/week). Add a simple before/after chart made in Canva. This ₹6L→₹8.5L story is your single strongest hiring signal — every reader should see it clearly.</div>
+      <div class="guide-tags"><span class="gtag">Revenue Chart</span><span class="gtag">WhatsApp Templates</span><span class="gtag">Campaign Brief</span></div>
+    </div>
+
+    <div class="guide-card rev">
+      <div class="guide-priority priority-strong">Strong Signal · Build This Month</div>
+      <div class="guide-title">7-Day Instagram Caption Series for KTM / Bajaj</div>
+      <div class="guide-desc">Write one full week of Instagram captions for your preferred target brand. Include the post concept, caption, CTA, and 5 hashtags per post. Copy voice is one of the rarest and most valued skills in Indian automotive marketing — and almost nobody shows it in their portfolio.</div>
+      <div class="guide-tags"><span class="gtag">Caption Writing</span><span class="gtag">Brand Voice</span><span class="gtag">7 Posts</span><span class="gtag">Hashtag Strategy</span></div>
+    </div>
+
+    <div class="guide-card rev rev-delay-1">
+      <div class="guide-priority priority-strong">Strong Signal · Build This Month</div>
+      <div class="guide-title">SEO Article: "Best 250cc Bikes in India 2025"</div>
+      <div class="guide-desc">Write a 1,200-word, genuinely useful buyer guide targeting a real keyword. Publish on Medium or your own domain. Link to it from your portfolio. This proves you can write for search AND that you have real product knowledge — two things most marketing candidates can't show together.</div>
+      <div class="guide-tags"><span class="gtag">Long-form SEO</span><span class="gtag">Medium/Blog</span><span class="gtag">Buyer Guide</span><span class="gtag">Keyword Targeting</span></div>
+    </div>
+
+    <div class="guide-card rev rev-delay-2">
+      <div class="guide-priority priority-strong">Strong Signal · Build This Month</div>
+      <div class="guide-title">UNIVO Power BI Dashboard — Recreated Visual</div>
+      <div class="guide-desc">Recreate your conversion funnel dashboard in Canva (anonymised data is fine). Show the 12% → 20% improvement as a visual chart. A data visualisation in a marketing portfolio is extremely rare and signals analytical maturity that most content marketers don't have.</div>
+      <div class="guide-tags"><span class="gtag">Funnel Chart</span><span class="gtag">Before/After Visual</span><span class="gtag">Canva / Power BI</span></div>
+    </div>
+
+    <div class="guide-card rev">
+      <div class="guide-priority priority-nice">Nice to Have · Build This Quarter</div>
+      <div class="guide-title">A Personal Bike Blog (Even 3 Posts)</div>
+      <div class="guide-desc">Start a Substack or Medium page. Write 3 pieces: one product review, one industry take, one personal riding/passion piece. Nothing signals genuine category passion to a Bajaj or Hero hiring manager more than content you create for free. It tells them you live the product.</div>
+      <div class="guide-tags"><span class="gtag">Substack</span><span class="gtag">Medium</span><span class="gtag">Product Review</span><span class="gtag">Industry Opinion</span></div>
+    </div>
+
+    <div class="guide-card rev rev-delay-1">
+      <div class="guide-priority priority-nice">Nice to Have · Build This Quarter</div>
+      <div class="guide-title">Brand Visual Moodboard — KTM or Bajaj</div>
+      <div class="guide-desc">Create a visual identity moodboard in Canva: typography, colour palette, photography style, tone of voice. 1 page. Shows creative direction thinking beyond copywriting. Specifically valued at advertising agencies like Dentsu and WATConsult who service these brands.</div>
+      <div class="guide-tags"><span class="gtag">Moodboard</span><span class="gtag">Typography</span><span class="gtag">Colour Palette</span><span class="gtag">Brand Identity</span></div>
+    </div>
+
+    <div class="guide-card rev rev-delay-2">
+      <div class="guide-priority priority-nice">Nice to Have · Build This Quarter</div>
+      <div class="guide-title">LinkedIn Content Series — 5 Marketing Posts</div>
+      <div class="guide-desc">Write 5 LinkedIn posts: a campaign teardown, a brand observation about one of your target brands, a lesson from your Xindus work, an automotive market trend, and a "what I learned" post. Screenshot the best-performing one and add it here. Recruiters at these companies check LinkedIn before every interview.</div>
+      <div class="guide-tags"><span class="gtag">LinkedIn</span><span class="gtag">Campaign Teardown</span><span class="gtag">Brand Observation</span><span class="gtag">Thought Leadership</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="contact-left">
+    <div class="sec-eyebrow"><span>//</span> 07 — Let's Work Together</div>
+    <h2 class="sec-title" style="font-size:clamp(3rem,6vw,5.5rem)">Open<br>For<br>Roles</h2>
+    <p style="font-size:0.9rem;font-weight:300;color:var(--chalk2);max-width:360px;line-height:1.85;margin-top:1rem;position:relative;z-index:1">
+      Targeting marketing, brand, and advertising roles at automotive companies — with a strong preference for Bajaj Auto, KTM India, Hero MotoCorp, and leading ad agencies that service these brands.
+    </p>
+    <a href="mailto:ktanishqq17@gmail.com" class="contact-cta" style="position:relative;z-index:1;margin-top:2rem">Get In Touch →</a>
+  </div>
+  <div class="contact-right">
+    <a href="mailto:ktanishqq17@gmail.com" class="contact-link">
+      <span class="cl-label">Email</span>
+      <span class="cl-val">ktanishqq17@gmail.com</span>
+      <span class="cl-arrow">→</span>
+    </a>
+    <a href="https://linkedin.com/in/tanishq-kumar" class="contact-link">
+      <span class="cl-label">LinkedIn</span>
+      <span class="cl-val">linkedin.com/in/tanishq-kumar</span>
+      <span class="cl-arrow">→</span>
+    </a>
+    <a href="tel:+919818492508" class="contact-link">
+      <span class="cl-label">Phone</span>
+      <span class="cl-val">+91 98184 92508</span>
+      <span class="cl-arrow">→</span>
+    </a>
+    <div class="contact-link" style="text-decoration:none;cursor:default">
+      <span class="cl-label">Location</span>
+      <span class="cl-val">New Delhi, India</span>
+    </div>
+    <div class="contact-link" style="text-decoration:none;cursor:default">
+      <span class="cl-label">Education</span>
+      <span class="cl-val">MBA Marketing · DTU · 2026</span>
+    </div>
+    <div style="margin-top:2rem;display:flex;gap:1px;background:var(--wire2)">
+      <div style="background:var(--ink);padding:1rem;flex:1;text-align:center">
+        <div style="font-family:var(--display);font-size:1.8rem;font-weight:700;color:var(--ktm)">Open</div>
+        <div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk3);margin-top:2px">To Opportunities</div>
+      </div>
+      <div style="background:var(--ink);padding:1rem;flex:1;text-align:center">
+        <div style="font-family:var(--display);font-size:1.8rem;font-weight:700;color:var(--chalk)">2026</div>
+        <div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk3);margin-top:2px">MBA Completion</div>
+      </div>
+      <div style="background:var(--ink);padding:1rem;flex:1;text-align:center">
+        <div style="font-family:var(--display);font-size:1.8rem;font-weight:700;color:var(--bajaj)">Delhi</div>
+        <div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--chalk3);margin-top:2px">Based In</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-l">© 2025 Tanishq Kumar — Marketing & Brand Portfolio · Built for Bajaj · KTM · Hero</span>
+  <div class="footer-r">
+    <a href="#bullets">Resume</a>
+    <a href="#cases">Cases</a>
+    <a href="#campaigns">Campaigns</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+// LOADER
+let pct = 0;
+const pctEl = document.getElementById('loader-pct');
+const loaderTimer = setInterval(() => {
+  pct = Math.min(pct + Math.floor(Math.random()*18)+5, 100);
+  if(pctEl) pctEl.textContent = pct + '%';
+  if(pct >= 100){ clearInterval(loaderTimer); setTimeout(()=>{ document.getElementById('loader').classList.add('gone'); startCounters(); animateRPM(); animateSkills(); }, 200); }
+}, 90);
+
+// COUNTERS
+function startCounters(){
+  document.querySelectorAll('.counter').forEach(el => {
+    const target = parseInt(el.dataset.target);
+    let cur = 0;
+    const step = Math.ceil(target / 40);
+    const t = setInterval(() => {
+      cur = Math.min(cur + step, target);
+      el.textContent = cur;
+      if(cur >= target) clearInterval(t);
+    }, 35);
+  });
+}
+
+// RPM GAUGE
+function animateRPM(){
+  const arcLen = 535;
+  const fill = document.getElementById('arc-fill');
+  const needle = document.getElementById('needle');
+  const display = document.getElementById('rpm-display');
+  if(!fill || !needle || !display) return;
+  let prog = 0;
+  const maxDeg = 225;
+  const t = setInterval(() => {
+    prog = Math.min(prog + 2, 78);
+    const dashLen = (prog / 100) * arcLen;
+    fill.setAttribute('stroke-dasharray', dashLen + ' ' + arcLen);
+    const deg = -maxDeg + (prog / 100) * maxDeg * 2;
+    needle.setAttribute('transform', `rotate(${deg} 140 140)`);
+    display.textContent = Math.round(prog * 0.85);
+    if(prog >= 78) clearInterval(t);
+  }, 25);
+}
+
+// SKILL BARS
+function animateSkills(){
+  document.querySelectorAll('.skill-fill').forEach(el => {
+    el.style.transform = 'scaleX(1)';
+  });
+}
+
+// SCROLL REVEAL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting){
+      setTimeout(() => e.target.classList.add('in'), i * 60);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.rev').forEach(el => observer.observe(el));
+
+// BRAND TABS
+function switchBrand(brand, btn){
+  document.querySelectorAll('.campaign-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.btab').forEach(b => {
+    b.className = 'btab';
+  });
+  document.getElementById('panel-' + brand).classList.add('active');
+  btn.classList.add('active-' + brand);
+}
+</script>
+</body>
+</html>
